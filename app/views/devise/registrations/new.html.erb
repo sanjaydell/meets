@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "custom" %>
+<div class="box">
+  <h1>Register</h1>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.text_field :f_name, autofocus: true, autocomplete: "f_name",placeholder: "First Name",class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :l_name, autofocus: true, autocomplete: "l_name",placeholder: "Last Name" %>
+    </div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"E-mail" %>
+    </div>
+    
+    <div class="field">
+      <%= f.text_field :designation, autofocus: true, autocomplete: "designation",placeholder:"Designation" %>
+    </div>
+    
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password "%>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "Confirm Password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+    <footer>
+     <%= render "devise/shared/links" %>
+    </footer>
+  <% end %>
+</div>
+<div>
+  <footer>
+   <%= render "devise/shared/links" %>
+  </footer>
+</div>
