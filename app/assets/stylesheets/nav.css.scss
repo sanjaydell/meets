@@ -1,0 +1,49 @@
+*{ 
+  padding: 5px;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+.nav-bar{
+	background: #0082e6;
+	width: 100%;
+	height: 70px;
+}
+.nav-bar div ul li{
+  display: inline-block;
+  line-height: 0px;
+  margin: 0 20px;
+  font-color: white;
+  font-size: 20px;
+  padding-top: -20px;
+}
+.nav-bar div ul li h1{
+  font-weight: bolder;
+  font-size: 35px;
+  
+ }
+.nav-bar div ul li a{
+    color: white;
+}
+.nav-bar div ul li a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.user{
+  color: white;
+	float: right;
+	font-weight: bold;
+  margin: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.btn{
+  background-color: #EA2027;
+  float: right;
+  text-align: center;
+  padding: 15px 25px;
+}
+.nav-bar div ul li i{
+  margin-top: -20px;
+}

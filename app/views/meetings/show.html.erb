@@ -1,9 +1,16 @@
+<%= stylesheet_link_tag 'index' %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @meeting.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+<div class="w3-card-4">
+	<p>
+	  <strong>Guest</strong>
+	  <h1><%= User.find(@meeting.guest_id).f_name %></h1>
+	  <strong>Via</strong>
+	  <h2><%= @meeting.venue %></h2>
+	  <strong>Reason</strong>
+	  <h2><%= @meeting.reason %></h2>
+	  <strong>At</strong>
+	  <h2><%= @meeting.time %></h2>
+    </p>
+	<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+	<%= link_to 'Back', meetings_path %>
+</div>

@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "custom3" %>
 <%= form_with(model: meeting) do |form| %>
   <% if meeting.errors.any? %>
     <div id="error_explanation">
@@ -10,29 +11,28 @@
       </ul>
     </div>
   <% end %>
+  <div class="box">
+    <div class="field">
+      <%= form.text_field :user_id,placeholder: "User Id" %>
+    </div>
+    <div class="field">
+      <%= form.text_field :venue,placeholder: "Venue" %>
+    </div>
+    <div class="field">
+      <%= form.label :time %>
+      <br/>
+      <%= form.datetime_field :time %>
+    </div>
+     <div class="field">
+      <%= form.text_field :guest_id,placeholder: "Guest Id" %>
+    </div>
+    <div class="field">
+      <%= form.text_field :reason,placeholder: "Reason" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= form.label :venue %>
-    <%= form.text_field :venue %>
-  </div>
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.datetime_field :time %>
-  </div>
-   <div class="field">
-    <%= form.label :guest_id %>
-    <%= form.text_field :guest_id %>
-  </div>
-  <div class="field">
-    <%= form.label :reason %>
-    <%= form.text_field :reason %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <%= link_to 'Back', meetings_path %>
   </div>
 <% end %>

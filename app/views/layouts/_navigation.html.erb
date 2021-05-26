@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag 'nav' %>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<nav class="nav-bar">
+  <div>
+    <ul>
+      <li><h1><%= link_to "Meet@", root_path %></h1></li>
+      <% if current_user%>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "My Meetings", meetings_path %></li>
+        <li><%= link_to 'Create Meeting', new_meeting_path %></li>
+        <li class="btn"><%= link_to("Logout", destroy_user_session_path, method: :delete)%></li>
+        <li class="user"><i class='fas fa-user-alt'></i><%= current_user.f_name %> <%=current_user.l_name%></li>
+        
+      <% end%>
+    </ul>
+  </div>
+</nav>
