@@ -65,6 +65,8 @@ class MeetingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meeting_params
+      params[:meeting][:user_id] = current_user.id
+     # params[:meeting][:guest_id] = ActiveRecord::Base.connection.execute("SELECT "User"."id" FROM "User" WHERE "email"="params[:meeting][:guest_id]"")
       params.require(:meeting).permit(:user_id,:venue,:time,:guest_id,:reason)
     end
 end

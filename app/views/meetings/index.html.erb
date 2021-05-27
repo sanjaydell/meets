@@ -1,22 +1,24 @@
 <%= stylesheet_link_tag 'index' %>
 <p id="notice"><%= notice %></p>
 <% @meetings.each do |meeting| %>
-  <div class="w3-card-4">
-    <nav class="nav-bar">
-      <h2><%=meeting.time%></h2>
-    </nav>
+  <% if meeting.user_id==current_user.id||meeting.guest_id==current_user.id %>
+    <div class="w3-card-4">
+      <nav>
+        <h2><%=meeting.time%></h2>
+      </nav>
 
-    <div>
-      <p>Meeting with <h3><%= User.find(meeting.guest_id).f_name %></h3>
-         on <h3><%=meeting.venue%></h3>
-      </p>
+      <div>
+        <p>Meeting with <h3><%= User.find(meeting.guest_id).f_name %></h3>
+           on <h3><%=meeting.venue%></h3>
+        </p>
+      </div>
+
+      <footer>
+        <%= link_to 'Show', meeting %>
+        <%= link_to 'Edit', edit_meeting_path(meeting) %>
+        <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </footer>
     </div>
-
-    <footer>
-      <%= link_to 'Show', meeting %>
-      <%= link_to 'Edit', edit_meeting_path(meeting) %>
-      <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </footer>
-  </div>
-  <br/>
+    <br/>
+  <% end %>
 <% end %>
